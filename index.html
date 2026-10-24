@@ -1,0 +1,218 @@
+---
+layout: null
+permalink: /
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mariuz · Popa Marius Adrian</title>
+<meta name="description" content="Projects and announcements from Popa Marius Adrian (mariuz): FlameRobin, Firebird in the browser via WebAssembly, fbvector, fire-crab, FBSimCity and more.">
+<link rel="alternate" type="application/atom+xml" title="mapopa blog" href="https://mapopa.blogspot.com/feeds/posts/default">
+<style>
+  :root {
+    --bg: #fbfaf8; --surface: #ffffff; --text: #1d1c22; --muted: #5d5b66;
+    --line: #e6e3de; --accent: #c2410c; --accent-soft: #fff1e8; --tag: #f1efeb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141318; --surface: #1c1b22; --text: #ecebf0; --muted: #a3a1ad;
+      --line: #2e2c36; --accent: #fb923c; --accent-soft: #2a1d15; --tag: #26242d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: var(--accent); text-decoration: none; }
+  a:visited { color: var(--accent); }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 56px 0 32px; border-bottom: 1px solid var(--line); }
+  header h1 { margin: 0 0 6px; font-size: clamp(28px, 5vw, 40px); letter-spacing: -0.02em; }
+  header p { margin: 0; color: var(--muted); max-width: 680px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .links a { border: 1px solid var(--line); background: var(--surface); padding: 5px 12px;
+    border-radius: 999px; font-size: 14px; color: var(--text); }
+  .links a:hover { border-color: var(--accent); text-decoration: none; }
+  nav { display: flex; flex-wrap: wrap; gap: 18px; padding: 14px 0; font-size: 14px; }
+  nav a { color: var(--muted); }
+  section { padding: 28px 0; }
+  h2 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 18px; font-size: 15px; }
+  h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+    margin: 26px 0 10px; }
+  .news { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .news li { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 10px 0;
+    border-bottom: 1px solid var(--line); }
+  .news time { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .card h4 { margin: 0; font-size: 16px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; flex: 1; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font-size: 13px; }
+  .tag { background: var(--tag); color: var(--muted); padding: 1px 8px; border-radius: 6px; }
+  .play { background: var(--accent-soft); padding: 1px 8px; border-radius: 6px; font-weight: 600; }
+  footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+  @media (max-width: 520px) { .news li { grid-template-columns: 1fr; gap: 0; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Popa Marius Adrian <span style="color:var(--muted);font-weight:400">· mariuz</span></h1>
+    <p>Software developer from Romania and long-time <a href="https://firebirdsql.org">Firebird RDBMS</a> contributor.
+      I maintain open-source tooling around Firebird and lately push it into new places:
+      the browser (WebAssembly), Kubernetes, vector search, Rust and LLM assistants over MCP.</p>
+    <div class="links">
+      <a href="https://github.com/mariuz">GitHub</a>
+      <a href="https://mapopa.blogspot.com">Blog</a>
+      <a href="http://flamerobin.org">flamerobin.org</a>
+      <a href="https://github.com/FirebirdSQL">FirebirdSQL</a>
+      <a href="https://reea.net">reea.net</a>
+    </div>
+    <nav>
+      <a href="#news">Announcements</a>
+      <a href="#play">Play in the browser</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Articles</a>
+    </nav>
+  </header>
+
+  <section id="news">
+    <h2>Latest announcements</h2>
+    <p class="sub">From the <a href="https://mapopa.blogspot.com">mapopa blog</a>.</p>
+    <ul class="news">
+      <li><time datetime="2026-10-21">2026-10-21</time><a href="https://mapopa.blogspot.com/2026/10/firebird-can-now-be-built-with-cmake.html">Firebird can now be built with CMake + Clang on Windows, Linux and macOS</a></li>
+      <li><time datetime="2026-08-15">2026-08-15</time><a href="https://mapopa.blogspot.com/2026/08/fbsimcity-v090-machine-room-real.html">FBSimCity v0.9.0: the machine room, with the real Firebird engine inside the city</a></li>
+      <li><time datetime="2026-08-09">2026-08-09</time><a href="https://mapopa.blogspot.com/2026/08/electric-firebird-firebird-database.html">Electric Firebird: the Firebird engine compiled to WebAssembly, with a live demo</a></li>
+      <li><time datetime="2026-08-04">2026-08-04</time><a href="https://mapopa.blogspot.com/2026/08/firebird-adds-optional-static-fbclient.html">Firebird adds an optional static fbclient</a></li>
+      <li><time datetime="2026-08-01">2026-08-01</time><a href="https://mapopa.blogspot.com/2026/08/fbsimcity-v060-replication-district.html">FBSimCity v0.6.0: the replication district</a></li>
+      <li><time datetime="2026-07-31">2026-07-31</time><a href="https://mapopa.blogspot.com/2026/07/node-firebird-catches-up-roadmap.html">node-firebird catches up: roadmap complete, issue tracker at zero</a></li>
+      <li><time datetime="2026-07-31">2026-07-31</time><a href="https://mapopa.blogspot.com/2026/07/announcing-cl-firebird-v100-pure-common.html">cl-firebird v1.0.0: a pure Common Lisp driver for Firebird</a></li>
+      <li><time datetime="2026-07-28">2026-07-28</time><a href="https://mapopa.blogspot.com/2026/07/fbsimcity-explorable-city-that-shows.html">FBSimCity: an explorable city that shows how Firebird works</a></li>
+      <li><time datetime="2026-07-13">2026-07-13</time><a href="https://mapopa.blogspot.com/2026/07/announcing-node-firebird-v260.html">node-firebird v2.6.0: TypeScript 7, query cancellation, Firebird 6.0 support</a></li>
+      <li><time datetime="2026-07-10">2026-07-10</time><a href="https://mapopa.blogspot.com/2026/07/going-native-free-introducing-pure.html">A pure Node.js wire driver for Firebird</a></li>
+      <li><time datetime="2026-06-06">2026-06-06</time><a href="https://mapopa.blogspot.com/2026/06/firebird-adds-unix-domain-socket-support.html">Firebird adds Unix domain socket support</a></li>
+      <li><time datetime="2026-05-08">2026-05-08</time><a href="https://mapopa.blogspot.com/2026/05/how-firebirds-new-parallel-sort-changes.html">How Firebird's new parallel sort changes everything</a></li>
+      <li><time datetime="2026-04-24">2026-04-24</time><a href="https://mapopa.blogspot.com/2026/04/help-us-test-new-firebird-docker-images.html">Help us test the new Firebird Docker images</a></li>
+      <li><time datetime="2026-04-23">2026-04-23</time><a href="https://mapopa.blogspot.com/2026/04/flamerobin-0916-released.html">FlameRobin 0.9.16 released</a></li>
+    </ul>
+    <p class="sub" style="margin-top:12px"><a href="https://mapopa.blogspot.com">All posts →</a></p>
+  </section>
+
+  <section id="play">
+    <h2>Play in the browser</h2>
+    <p class="sub">Classic games simulated inside a real Firebird 6 database compiled to WebAssembly, plus Castle Game Engine ports.</p>
+    <div class="grid">
+      <div class="card"><h4><a href="https://github.com/mariuz/firebird-doom">firebird-doom</a></h4>
+        <p>DOOM simulated and rendered inside Firebird SQL, running in the browser via Firebird WASM.</p>
+        <div class="meta"><a class="play" href="https://mariuz.github.io/firebird-doom/">▶ Play</a><span class="tag">SQL / WASM</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/firebird-quake">firebird-quake</a></h4>
+        <p>Quake simulated and rendered inside the Firebird database.</p>
+        <div class="meta"><a class="play" href="https://mariuz.github.io/firebird-quake/">▶ Play</a><span class="tag">SQL / WASM</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/firebird-quake2">firebird-quake2</a></h4>
+        <p>Quake 2 simulated and rendered inside the Firebird database.</p>
+        <div class="meta"><a class="play" href="https://mariuz.github.io/firebird-quake2/">▶ Play</a><span class="tag">SQL / WASM</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/firebird-quake3">firebird-quake3</a></h4>
+        <p>Quake III Arena simulated and rendered inside the Firebird database.</p>
+        <div class="meta"><a class="play" href="https://mariuz.github.io/firebird-quake3/">▶ Play</a><span class="tag">SQL / WASM</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/castle-doom">castle-doom</a></h4>
+        <p>Doom levels rendered and played with Castle Game Engine, with a WebAssembly build.</p>
+        <div class="meta"><a class="play" href="https://mariuz.github.io/castle-doom/">▶ Play</a><span class="tag">Object Pascal</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/castle-quake1">castle-quake1</a></h4>
+        <p>Quake 1 port using Castle Game Engine.</p>
+        <div class="meta"><a class="play" href="https://mariuz.github.io/castle-quake1/">▶ Play</a><span class="tag">Object Pascal</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/castle-quake2">castle-quake2</a></h4>
+        <p>Quake 2 port using Castle Game Engine.</p>
+        <div class="meta"><a class="play" href="https://mariuz.github.io/castle-quake2/">▶ Play</a><span class="tag">Object Pascal</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/FBSimCity">FBSimCity</a></h4>
+        <p>An explorable isometric city showing how Firebird works: Y-valve, DSQL, MVCC, sweep, page cache, replication.</p>
+        <div class="meta"><a class="play" href="https://mariuz.github.io/FBSimCity/">▶ Explore</a><span class="tag">Education</span></div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="sub">Selected work. Everything else is on <a href="https://github.com/mariuz?tab=repositories">GitHub</a>.</p>
+
+    <h3>Firebird in new places</h3>
+    <div class="grid">
+      <div class="card"><h4><a href="https://github.com/mariuz/electric-firebird">electric-firebird</a></h4>
+        <p>The real Firebird engine compiled to WASM, running in the browser with no server. PGlite-style async API.</p>
+        <div class="meta"><a href="https://mariuz.github.io/electric-firebird/">Live demo</a><span class="tag">TypeScript / WASM</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/fbvector">fbvector</a></h4>
+        <p>Vector storage and similarity search as a Firebird UDR, SIMD-accelerated. Think pgvector, for Firebird.</p>
+        <div class="meta"><span class="tag">C++</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/fire-crab">fire-crab</a></h4>
+        <p>Incremental C++ to Rust conversion of the Firebird engine, differential-tested against the real engine.</p>
+        <div class="meta"><span class="tag">Rust</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/cloudnative-firebird">cloudnative-firebird</a></h4>
+        <p>Kubernetes operator for Firebird with a FirebirdCluster CRD, inspired by cloudnative-pg.</p>
+        <div class="meta"><span class="tag">TypeScript</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/firebirdrest">FirebirdREST</a></h4>
+        <p>Serve a RESTful API from any Firebird database.</p>
+        <div class="meta"><a href="https://mariuz.github.io/firebirdrest/">Docs</a><span class="tag">REST</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/firebirdrest-js">firebirdrest-js</a></h4>
+        <p>The supabase-js query API (from, select, filters, rpc, upserts) for FirebirdREST.</p>
+        <div class="meta"><span class="tag">JavaScript</span></div></div>
+    </div>
+
+    <h3>Tools</h3>
+    <div class="grid">
+      <div class="card"><h4><a href="https://github.com/mariuz/flamerobin">FlameRobin</a></h4>
+        <p>Lightweight, cross-platform admin and development GUI for Firebird, now with a vector data editor and a built-in MCP server.</p>
+        <div class="meta"><a href="http://flamerobin.org">flamerobin.org</a><span class="tag">C++ / wxWidgets</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/fbadmin">fbadmin</a></h4>
+        <p>A pgAdmin-style web admin and development tool for Firebird: object explorer, DDL, query tool, editable grid.</p>
+        <div class="meta"><a href="https://mariuz.github.io/fbadmin/">Project page</a><span class="tag">Web</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/fbexport">FBExport / FBCopy</a></h4>
+        <p>Import/export data and run SQL scripts; copy and compare data across Firebird databases.</p>
+        <div class="meta"><span class="tag">C++</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/gmarathon-freepascal">gmarathon-freepascal</a></h4>
+        <p>The Marathon SQL IDE for Firebird, ported from Delphi to Lazarus/FreePascal.</p>
+        <div class="meta"><span class="tag">FreePascal</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/firebirdwebadmin">FirebirdWebAdmin</a></h4>
+        <p>Administer a Firebird server from the browser.</p>
+        <div class="meta"><span class="tag">PHP</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/perl-dbd-firebird">perl-dbd-firebird</a></h4>
+        <p>DBD::Firebird, the Perl DBI driver for Firebird.</p>
+        <div class="meta"><span class="tag">Perl / XS</span></div></div>
+    </div>
+
+    <h3>Games and engines</h3>
+    <div class="grid">
+      <div class="card"><h4><a href="https://github.com/mariuz/unreal-doom">unreal-doom</a></h4>
+        <p>DOOM and DOOM II ported to Unreal Engine 5.8 in C++: WAD loading, Lumen renderer, Niagara, co-op and deathmatch.</p>
+        <div class="meta"><span class="tag">C++ / UE5</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/castle-doom3">castle-doom3</a></h4>
+        <p>Doom 3 (id Tech 4) levels, materials, md5 models and sounds played with Castle Game Engine.</p>
+        <div class="meta"><span class="tag">Object Pascal</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/unreal-mcp-cpp">unreal-mcp-cpp</a></h4>
+        <p>An MCP server for Unreal Engine with a C++ core.</p>
+        <div class="meta"><span class="tag">C++</span></div></div>
+    </div>
+
+    <h3>Learning and history</h3>
+    <div class="grid">
+      <div class="card"><h4><a href="https://github.com/mariuz/conceptual-architecture-for-firebird-paper">Conceptual architecture for Firebird</a></h4>
+        <p>The conceptual-architecture paper on Firebird's major components, updated and re-diagrammed.</p>
+        <div class="meta"><span class="tag">Paper</span></div></div>
+      <div class="card"><h4><a href="https://github.com/mariuz/linux-0.01">linux-0.01</a></h4>
+        <p>A compilable version of the very first Linux kernel release.</p>
+        <div class="meta"><span class="tag">C</span></div></div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <h2>Articles on this site</h2>
+    <ul class="news">
+      <li><time datetime="2020-01-20">2020-01-20</time><a href="/2020/01/20/Using_OO_API.html">Using the Firebird OO API</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    Updated October 2026 · <a href="https://github.com/mariuz/mariuz.github.io">Source</a> · <a href="https://mapopa.blogspot.com/feeds/posts/default">Blog feed</a>
+  </footer>
+</div>
+</body>
+</html>

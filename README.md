@@ -1,3 +1,5 @@
-# Your blog
+# mariuz.github.io
 
-This is the repository for your blog! Click *_config.yml* above to get started and fill in the details. Then click *index.md* and edit it to start creating your home page.
+Source for [mariuz.github.io](https://mariuz.github.io/): links to my latest projects and announcements.
+
+The home page is a hand-written `index.html`; `_posts/` holds articles built by GitHub Pages (Jekyll).
